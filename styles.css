@@ -83,12 +83,35 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+    background: #f0f0f0;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
 }
 
 /* Courses Section */
@@ -183,7 +206,7 @@ body {
 
 .enroll-btn {
     width: 100%;
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
     padding: 12px;
     border: none;
@@ -191,11 +214,39 @@ body {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+.enroll-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
 }
 
 .enroll-btn:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
+}
+
+.enroll-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.enroll-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
 /* About Section */
@@ -273,7 +324,7 @@ body {
 
 .submit-btn {
     width: 100%;
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
     padding: 15px;
     border: none;
@@ -281,11 +332,37 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+.submit-btn::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+    padding-right: 50px;
+}
+
+.submit-btn:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
 }
 
 /* Footer */
