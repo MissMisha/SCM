@@ -1,0 +1,37 @@
+/* Reuse a similar look to login.css but scoped for register page */
+* {box-sizing: border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: linear-gradient(180deg,#07102a 0%, #051025 100%);
+	color:#e6eef8;
+	display:flex;align-items:center;justify-content:center;padding:32px;
+}
+
+.card{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.card h1{margin:0 0 6px 0;font-size:20px}
+.lead{margin:0 0 18px 0;color:#a9c0e8;font-size:13px}
+
+.register-form{display:flex;flex-direction:column;gap:10px}
+label{font-size:13px;color:#cfe0ff}
+input{padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit}
+
+.btn{margin-top:6px;padding:10px 12px;border-radius:10px;border:0;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#06b6d4,#4f46e5);color:white;font-weight:600}
+
+.signup-row{display:flex;gap:10px;align-items:center;margin-top:18px}
+.signup-row span{color:#9fb6e6}
+
+/* animated pill (back to login) — reuse the same classes as login.css for consistency */
+.register-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;position:relative;overflow:hidden;text-decoration:none;color:transparent;background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.06)}
+.register-text{position:relative;color:transparent;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:13px;padding-right:6px;background-image:linear-gradient(90deg,#06b6d4,#8b5cf6,#ff6b6b,#f59e0b);background-size:300% 100%;animation:shine 4s linear infinite}
+
+@keyframes shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.register-pill::before{content:"";position:absolute;left:-40%;top:-40%;width:180%;height:180%;background: conic-gradient(from 90deg at 50% 50%, rgba(6,182,212,0.12), rgba(139,92,246,0.14), rgba(255,107,107,0.12));filter:blur(18px);opacity:0.9;transform:translateZ(0);animation:rotateGlow 6s linear infinite}
+@keyframes rotateGlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.sparkle{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 0 14px 6px rgba(255,255,255,0.08),0 0 30px 10px rgba(139,92,246,0.14);transform:scale(0.7);opacity:0.9;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%{transform:scale(0.6);opacity:0.6}50%{transform:scale(1);opacity:1}100%{transform:scale(0.6);opacity:0.6}}
+.register-pill:hover .register-text{filter:brightness(1.05)}
+.register-pill:hover{transform:translateY(-3px);transition:transform .18s ease}
+@media (prefers-reduced-motion: reduce){.register-text,.register-pill::before,.sparkle{animation:none}}
