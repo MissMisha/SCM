@@ -42,7 +42,10 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.25rem;
+    align-items: center;
+    /* allow nav items to wrap to a new line instead of overflowing */
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -50,6 +53,8 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.35rem 0.5rem; /* breathing room for each link */
+    border-radius: 6px;
 }
 
 .nav-links a:hover {
@@ -402,9 +407,15 @@ body {
         gap: 1rem;
     }
 
+    /* Make nav-links span full width and center items on small screens */
     .nav-links {
-        gap: 1rem;
+        gap: 0.75rem;
+        width: 100%;
+        justify-content: center;
     }
+
+    /* Ensure each link can be tapped easily on mobile */
+    .nav-links li { flex: 0 0 auto; }
 
     .hero-content h2 {
         font-size: 2rem;

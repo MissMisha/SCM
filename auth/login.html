@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Login</title>
+		<link rel="stylesheet" href="login.css" />
+	</head>
+	<body>
+		<main class="login-page" aria-labelledby="login-heading">
+			<section class="card" role="region" aria-label="Login form">
+				<h1 id="login-heading">Welcome back</h1>
+				<p class="lead">Sign in to continue to your account</p>
+
+				<form class="login-form" action="#" method="post" novalidate>
+					<label for="email">Email</label>
+					<input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+					<label for="password">Password</label>
+					<input id="password" name="password" type="password" placeholder="••••••••" required />
+
+					<button type="submit" class="btn primary">Sign in</button>
+				</form>
+
+				<div class="aux">
+					<span>Forgot your password?</span>
+					<a class="small-link" href="#">Reset</a>
+				</div>
+
+				<div class="signup-row">
+					<span>Don't have an account?</span>
+					<!-- Animated register link -->
+					<a href="register.html" class="register-pill" aria-label="Register here">
+						<span class="register-text">Register here</span>
+						<span class="sparkle" aria-hidden="true"></span>
+					</a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
